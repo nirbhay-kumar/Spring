@@ -1,0 +1,30 @@
+package org.crescent.model;
+
+public class Circle {
+	
+	private int userId;
+	private String name;
+	public Circle(int userId, String name) {
+		super();
+		this.userId = userId;
+		this.name = name;
+	}
+	public Circle() {
+		// TODO Auto-generated constructor stub
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+
+}

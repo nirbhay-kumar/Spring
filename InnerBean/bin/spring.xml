@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	   					   
+
+<bean id="zeroPoint" class="Point">   <!-- equivalent to calling new Point() -->
+<property name="x" value="10" />      <!-- this object can be used by other objects apart from triangle -->
+<property name="y" value="20" />
+</bean>
+
+<bean id="triangle" class="Triangle">
+<!-- <bean id="triangle" class="Triangle" name="another-alias-name" -->
+<!-- But still good practice to use id instead of alias because if u define another object with same id xml validator gives error -->
+  <property name="pointA" ref="zeroPoint"/>   
+<!-- Dependency Injection Spring provides -->
+<!-- <property name="pointA">
+ <idref bean="zeroPoint"/>
+ 
+  validation to make sure referring to id zeropoint, if its not there it throws an exception 
+ </property>--> 
+ 
+ 
+<property name="pointB">
+	<bean class="Point">                    <!--  If you want to use this object only in Triangle object use inner bean -->
+	<property name="x" value="-20" />     <!-- There is no significant performance using inner bean , only thing we are gaining here, consolidate all the data together -->
+	<property name="y" value="0" />      <!-- So if its not needed anywhere else its always good practice to write down consolidated data -->
+	</bean>
+</property>
+
+<property name="pointC" ><!-- no need to specify id attribute -->
+	<bean  class="Point">  
+	<property name="x" value="20" />
+	<property name="y" value="0" />
+	</bean>
+</property>
+</bean>
+
+<alias name="triangle" alias="mytriangle"/>  <!-- alias name for my bean -->
+
+</beans>

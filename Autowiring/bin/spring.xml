@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	   					   
+
+<bean id="triangle" class="Triangle" autowire="byName">
+<!-- 
+In autowiring objectname from triangle class & id from spring.xml must be same
+ autowire="byType" - if u have only one bean(data member) u can use byType, now in this case more than one bean is there.
+ autowire="by constructor" -doing the same job as byType but instead of setter method it uses constructor
+ If u don't specify autowire property by default is autowire off.
+ Generally in the real project lots of bean u find it, so not to go for this approach.
+
+
+ -->
+<!--  <property name="pointA" ref="zeroPoint"/>   
+<property name="pointB" ref="point2"/>
+<property name="pointC" ref="point3"/>-->
+
+</bean>
+
+<bean id="pointA" class="Point">   <!-- equivalent to calling new Point() -->
+<property name="x" value="0" />
+<property name="y" value="0" />
+</bean>
+
+<bean id="pointB" class="Point">   
+<property name="x" value="-20" />
+<property name="y" value="0" />
+</bean>
+
+<bean id="pointC" class="Point">  
+<property name="x" value="20" />
+<property name="y" value="0" />
+</bean>
+</beans>
+
+
