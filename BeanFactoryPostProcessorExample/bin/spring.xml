@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	   					   
+
+<bean id="employee" class="com.bmc.Employee">
+<property name="name" value="Sanjay" />
+<property name="address" ref="address"/>
+</bean>
+
+
+<bean id="address" class="com.bmc.Address">
+<!-- <property name="city" value="Pune"/> -->
+<property name="city" value="${address.myAddress}" /> 
+</bean>
+
+<!-- <bean class="com.bmc.DisplayNameBeanFactoryPP"/>
+ -->
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<!-- <property name="locations" value="addressconfig.properties"/> same statement as follow-->
+<property name="locations" value="classpath:addressconfig.properties"/>
+</bean>
+</beans>  
