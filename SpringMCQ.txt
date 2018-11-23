@@ -1,0 +1,250 @@
+1)Which of the given option represents loose coupling?
+	1). public class Person
+		{
+			private Address address;
+			public Person()
+				{
+					this.address = new Address();
+				}
+		}
+	2). public class Person
+		{
+	private Address address;
+	public Person(Address address)
+	{
+	this.address = address; 
+	}
+	}
+	3). Both 0 and 1
+	4). none of the above
+	
+	
+
+2)Which element in the spring configuration file is used to tell the Spring container about a class and how it should be configured.            
+	1). <bean>
+	2). <id>
+	3). <class>
+	4). <beans>
+	
+	
+
+
+3)<bean id="currencyConverter" class="training.Spring.CurrencyConverterImpl">
+     <property name="exchangeRate" value="44.50" /></bean>
+
+	Which type of dependency injection is used in above code?
+	1). Setter Injection
+	2). Constructor Injection
+	3). Interface Injection
+	4). No dependency injection is used
+	
+	
+
+
+4)Which of the given options are implementation of BeanFactory?
+	1). XMLBeanFactory
+	2). DefaultListableBeanFactory
+	3). JNDIBeanFactory
+	4). StaticBeanFactory
+	
+
+	
+
+5)Which is the way to provide configuration metadata to spring?
+
+A - XML Based configuration file.
+
+B - Annotation based configuration.
+
+C - Java based configuration.
+
+D - All of the above.
+
+
+6)Which class represents the IoC container?
+a.	ApplicationContext
+ b.	ServletContext
+
+
+7)Which is correct for Spring Framework?
+a.	Spring framework is light-weight solution.
+ b.	Spring framework is heavy-weight solution.
+
+
+8)How to use <ref> in spring framework?
+a.	<ref> is used with bean id.
+ b.	<ref> is used with string values.
+
+9)What is the scope of a bean by default in spring?
+a.	Prototype scope
+b.	Singleton scope
+
+10)By default a bean is eagerly initialized in spring?
+ a.	True
+b.	False
+
+
+
+11)How to shutdown the Spring IoC container gracefully in non-web applications?
+ a.	Using shutdownNow()
+ b.	registerShutdownHook()
+
+
+12How to control a bean lifecycle in spring?
+a.	Using init() method only.
+ b.	Using InitializingBean and DisposableBean or init() method.
+
+
+
+
+13)Spring’s @Controller can be applied to methods? 
+
+
+TRUE
+
+FALSE
+
+
+14)How would you load a bean from the Spring’s application context?
+
+
+appContext.getSpringBean(beanName)
+
+appContext.getBean(beanName, beanClass.class)
+
+appContext.getbean(beanName)
+
+appContext.loadBean(beanName)
+
+15) Which of the given syntax is correct to get a unique instance of a bean each time it is asked for?
+	1). <bean id=“foo” class=“com.igate.Foo” scope=“prototype” />
+	2). <bean id=“foo” class=“com.igate.Foo” scope=“singleton” />
+	3). <bean id=“foo” class=“com.igate.Foo” scope=“request” />
+	4). <bean id=“foo” class=“com.igate.Foo” scope=“session” />
+
+16)Look at the bean below. 
+
+	public class ExampleBean 
+	{
+
+	  private int years;             
+          private String ultimateAnswer;
+	
+    	  public ExampleBean(int years, String ultimateAnswer) 
+		{
+        	  this.years = years;
+	          this.ultimateAnswer = ultimateAnswer;
+	        }
+        }
+
+	
+17)What would be the value of index, to instantiate the bean using constructor injection?
+
+	<bean id="exampleBean" class="examples.ExampleBean">
+  	<constructor-arg index="_____"><value>7500000</value></constructor-arg>
+  	<constructor-arg index="_____"><value>42</value></constructor-arg>
+	</bean>
+
+
+	1). '0 and 1
+	2). '1 and 2
+	3). Start-index value does not matter
+	4). There is no attribute called index with the <constructor-arg> element
+
+
+18)Which is the default handler mapping used by DispatcherServlet
+
+BeanNameHandlerMapping
+
+SimpleUrlHandlerMapping
+
+BeanNameUrlHandlerMapping
+
+None of the above
+
+
+19)
+what is returned if one invokes getBean() specifying the same bean id multiple times when scope of the bean is not defined?
+
+
+Same class every time
+
+Same instance of the bean
+
+Different instance of the bean
+
+None of them
+
+
+
+
+
+20)
+In Spring, Applcation context support internationalization and localisation of messages?
+
+
+correct
+
+wrong
+
+
+21)
+Which annotation you will use to inject Collection types:
+
+(Map, Set, List etc)
+
+@Autowired
+
+@Service
+
+@Resource
+
+@Component
+
+
+
+22)
+What is the purpose of @Qualifier annotation?
+
+
+Spring doesn’t support this annotation
+
+It helps specify object with multiple dependency which dependency to inject
+
+It is used in conjunction with @Autowired
+
+Annotation used to qualify the normal bean as spring bean
+
+
+23)
+In Spring MVC if the DispatcherServlet is configured using servlet-name as "abc", then which xml file is used to load the Spring application context.
+
+
+abc.xml
+
+abc-context.xml
+
+abc-servlet.xml
+
+None of the above
+
+
+24)
+How do you enable scanning for various annotations such as @Autowired, @Inject, @Component, @Bean?
+
+Need to declare context namespace and do <context:component-scan/>
+
+There is no need to perform any scanning, annotations are enough
+
+Perform <context:component-scan/>
+
+Perform <context:spring-scan/>
+
+
+25)
+Spring provides support for both REST and SOAP based web services? 
+
+
+TRUE
+
+FALSE
